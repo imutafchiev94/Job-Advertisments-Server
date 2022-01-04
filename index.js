@@ -8,7 +8,7 @@ const app = express();
 app.set('trust proxy', 1);
 
 require('./config/expressConfig')(app);
-//require('./config/mongooseConfig')(app);
+require('./config/mongooseConfig')(app);
 
 app.use('/api', router);
 
