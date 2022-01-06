@@ -4,10 +4,7 @@ const JobAdvertismentCategorySchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
-    }, jobAdvertisments: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "JobAdvertisment"
-    }], createdAt: {
+    }, createdAt: {
         type: Date,
         default: new Date(Date.now()).toUTCString()
     }, deletedAt: {

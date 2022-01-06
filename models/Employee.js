@@ -26,7 +26,7 @@ const EmployeeSchema = new mongoose.Schema({
   ], createdAt: {
     type: Date,
     default: new Date(Date.now()).toUTCString(),
-  },  updatedAt: {
+  }, updatedAt: {
     type: Date,
     required: false,
   }, updatedBy: {

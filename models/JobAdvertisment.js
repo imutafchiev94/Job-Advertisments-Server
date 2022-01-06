@@ -18,7 +18,16 @@ const JobAdvertismentSchema = new mongoose.Schema({
     }, category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'JobAdvertismentCategory'
-    }, createdAt: {
+    }, rejectedCandidates: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Employee'
+    }], approveCandidate: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Employee',
+    }, candidates: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Employee'
+    }], createdAt: {
         type: Date,
         default: new Date(Date.now()).toUTCString(),
     }, createdBy: {
@@ -33,8 +42,7 @@ const JobAdvertismentSchema = new mongoose.Schema({
     }, deletedAt: {
         type: Date,
         required: false
-    }, 
-    deletedBy: {
+    }, deletedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Organization",
     } 
